@@ -202,3 +202,30 @@ net = Weapon(
 )
 
 # Adding Martial Melee Weapons
+
+battleaxe = Weapon(
+      name="Battleaxe",
+      damageType=slash,
+      minDmg=1,
+      maxDmg=8,
+      category=martial,
+      is_ranged=False
+)
+
+flail = Weapon(
+      name="Flail",
+      damageType=blunt,
+      minDmg=1,
+      maxDmg=8,
+      category=martial,
+      is_ranged=False
+)
+
+glaive = Weapon(
+      name="Glaive",
+      damageType=slash,
+      minDmg=1,
+      maxDmg=10,
+      category=martial,
+      is_ranged=False
+)

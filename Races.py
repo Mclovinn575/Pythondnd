@@ -61,74 +61,16 @@ class Race:
 
         ### Will eventually want to add some kind of subclass system to this that inherits certain traits from the parent class but overwrites others.
 
-
-template = Race(
+dwarf = Race(
 # General Information
-    # Race Name
-    ""
-    # Adult Age of this Race
-    , 0
-
-    # Average Lifespan of this Race
-    , 100
-
-    # Size of this race
-    , "Medium"
-
-    # Speed of this Race
-    , 30
-
-    # Languages of this Race
-    , ["Common",]
-
-    # Description of the Race
-    , ""
-
-    # Inherint traits of this Race. May grant additional perks/abilities.
-    ,[]
-
-# Ability Modifiers
-    # Strength Modifier
-    ,0
-    # Dexterity Modifier
-    ,0
-    # Constitution Modifier
-    ,0
-    # Wisdom Modifier
-    ,0
-    # Intelligence Modifier
-    ,0
-    # Charisma Modifier
-    ,0
-    
-    
-    
-)
-
-Dwarf = Race(
-# General Information
-    # Race Name
-    "Dwarf"
-    # Adult Age of this Race
-    , 50
-
-    # Average Lifespan of this Race
-    , 400
-
-    # Size of this race
-    , "Medium"
-
-    # Speed of this Race
-    , 30
-
-    # Languages of this Race
-    , ["Common", "Dwarvish"]
-
-    # Description of the Race
-    , "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal."
-
-    # Inherint traits of this Race. May grant additional perks/abilities.
-    ,["Battleaxe proficiency"
+    race_name="Dwarf"
+    , adult_age=50
+    , lifespan=400
+    , size="Medium"
+    , speed=30
+    , language=["Common", "Dwarvish"]
+    , description="Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal."
+    ,racial_abilities=["Battleaxe proficiency"
       ,"Handaxe Proficiency"
       ,"Light Hammer Proficiency"
       ,"Warhammer Proficiency"
@@ -136,65 +78,71 @@ Dwarf = Race(
       ,{"Stonecunning":"Whenever making a 'History' check related to stonework, you are considered proficient in 'History' and can add double your proficiency bonus to the check."}
       ]
 
-
 # Ability Modifiers
-    # Strength Modifier
-    ,0
-    # Dexterity Modifier
-    ,0
-    # Constitution Modifier
-    ,2
-    # Wisdom Modifier
-    ,0
-    # Intelligence Modifier
-    ,0
-    # Charisma Modifier
-    ,0
-    
-    
+    ,strength_modifier=0
+    ,dexterity_modifier=0
+    ,constitution_modifier=2
+    ,wisdom_modifier=0
+    ,intelligence_modifier=0
+    ,charisma_modifier=0
     
 )
 
+elf = Race(
+    race_name='elf',
+    adult_age=100,
+    lifespan=750,
+    size='Medium',
+    speed=30,
+    language=['Common','Elvish'],
+    description='Elves are a magical people of otherworldy grace, living in the world but not entirely a part of it. They live in places of etheral beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze. Elves love nature and magic art and atristry, music and poetry , and the good things of the world',
+    racial_abilities=['Darkvision','Keen Senses', 'Fey Ancestry', 'Trance'],
 
-Human = Race(
-# General Information
-    # Race Name
-    "Human"
-    # Adult Age of this Race
-    , 20
+    # Modifiers
+    strength_modifier=0,
+    dexterity_modifier=2,
+    constitution_modifier=0,
+    wisdom_modifier=2,
+    intelligence_modifier=0,
+    charisma_modifier=0
 
-    # Average Lifespan of this Race
-    , 80
-
-    # Size of this race
-    , "Medium"
-
-    # Speed of this Race
-    , 30
-
-    # Languages of this Race
-    , ["Common",]
-
-    # Description of the Race
-    , ""
-
-    # Inherint traits of this Race. May grant additional perks/abilities.
-    ,[]
-# Ability Modifiers
-    # Strength Modifier
-    ,0
-    # Dexterity Modifier
-    ,0
-    # Constitution Modifier
-    ,0
-    # Wisdom Modifier
-    ,0
-    # Intelligence Modifier
-    ,0
-    # Charisma Modifier
-    ,0
-    
-    
-    
 )
 
+halfling = Race(
+    race_name='Halfling',
+    adult_age=20,
+    lifespan=200,
+    size='Small',
+    speed=25,
+    language=['Common','Halfling'],
+    description='The diminutive halflings surivie in a world full of larger creatures by avoiding notice or, barring that, avoiding offense. Standing about 3 feet tall, they appear relatively harmless and so have managed to survive for centuries in the shadow of empires and on the edges of wars and political strife. They are inclined to be stout, weighing between 40 and 50 pounds.',
+    racial_abilities=['Lucky','Brave','Halfling Nimbleness'],
+
+    # Modifiers
+    strength_modifier=0,
+    dexterity_modifier=2,
+    constitution_modifier=0,
+    wisdom_modifier=0,
+    intelligence_modifier=0,
+    charisma_modifier=0
+
+)
+
+human = Race(
+    race_name='Human',
+    adult_age=18,
+    lifespan=80,
+    size='Medium',
+    speed=30,
+    language=['Common'],
+    description='',
+    racial_abilities=[],
+
+    # Modifiers
+    strength_modifier=1,
+    dexterity_modifier=1,
+    constitution_modifier=1,
+    wisdom_modifier=1,
+    intelligence_modifier=1,
+    charisma_modifier=1
+)

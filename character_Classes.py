@@ -12,6 +12,8 @@ class Character_Class:
         self.name = name
         self.hit_die = hit_die
         self.base_hp = base_hp
+
+        self.skills = []
         pass
 
 

@@ -15,18 +15,16 @@ class Race:
                  ,language
                  ,description
                  ,racial_abilities
-                 ,strength_modifier
-                 ,dexterity_modifier
-                 ,constitution_modifier
-                 ,wisdom_modifier
-                 ,intelligence_modifier
-                 ,charisma_modifier
+                 ,strength_bonus
+                 ,dexterity_bonus
+                 ,constitution_bonus
+                 ,wisdom_bonus
+                 ,intelligence_bonus
+                 ,charisma_bonus
                  ) -> None:
 
         
-        
-        
-        # Establishes the name and ability modifier of the race
+        # Establishes the name 
         self.name = race_name
         
         # The age entry determines when a memeber of a race becomes an 'Adult'
@@ -39,14 +37,14 @@ class Race:
             # A characters size can affect different gameplay rules and can cause the character to react differently to certain actions.
         self.size = size
 
-        # Attribute Modifiers
+        # Attribute bonuss
          
-        self.strength_modifier = strength_modifier
-        self.dexterity_modifier = dexterity_modifier
-        self.constitution_modifier = constitution_modifier
-        self.wisdom_modifier = wisdom_modifier
-        self.intelligence_modifier = intelligence_modifier
-        self.charisma_modifier = charisma_modifier
+        self.strength_bonus = strength_bonus
+        self.dexterity_bonus = dexterity_bonus
+        self.constitution_bonus = constitution_bonus
+        self.wisdom_bonus = wisdom_bonus
+        self.intelligence_bonus = intelligence_bonus
+        self.charisma_bonus = charisma_bonus
 
         # Speed determines how far you can move while traveling. 
             # This includes traveling for both adventuring (out of combat) and during encounters (in combat).
@@ -60,6 +58,17 @@ class Race:
         self.description = description
 
         ### Will eventually want to add some kind of subclass system to this that inherits certain traits from the parent class but overwrites others.
+
+
+
+
+
+
+
+
+# =============================================================================
+# Establish Race Defaults
+# =============================================================================
 
 dwarf = Race(
 # General Information
@@ -78,13 +87,13 @@ dwarf = Race(
       ,{"Stonecunning":"Whenever making a 'History' check related to stonework, you are considered proficient in 'History' and can add double your proficiency bonus to the check."}
       ]
 
-# Ability Modifiers
-    ,strength_modifier=0
-    ,dexterity_modifier=0
-    ,constitution_modifier=2
-    ,wisdom_modifier=0
-    ,intelligence_modifier=0
-    ,charisma_modifier=0
+# Ability bonus
+    ,strength_bonus=0
+    ,dexterity_bonus=0
+    ,constitution_bonus=2
+    ,wisdom_bonus=0
+    ,intelligence_bonus=0
+    ,charisma_bonus=0
     
 )
 
@@ -98,13 +107,13 @@ elf = Race(
     description='Elves are a magical people of otherworldy grace, living in the world but not entirely a part of it. They live in places of etheral beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze. Elves love nature and magic art and atristry, music and poetry , and the good things of the world',
     racial_abilities=['Darkvision','Keen Senses', 'Fey Ancestry', 'Trance'],
 
-    # Modifiers
-    strength_modifier=0,
-    dexterity_modifier=2,
-    constitution_modifier=0,
-    wisdom_modifier=2,
-    intelligence_modifier=0,
-    charisma_modifier=0
+    # bonus
+    strength_bonus=0,
+    dexterity_bonus=2,
+    constitution_bonus=0,
+    wisdom_bonus=2,
+    intelligence_bonus=0,
+    charisma_bonus=0
 
 )
 
@@ -118,13 +127,13 @@ halfling = Race(
     description='The diminutive halflings surivie in a world full of larger creatures by avoiding notice or, barring that, avoiding offense. Standing about 3 feet tall, they appear relatively harmless and so have managed to survive for centuries in the shadow of empires and on the edges of wars and political strife. They are inclined to be stout, weighing between 40 and 50 pounds.',
     racial_abilities=['Lucky','Brave','Halfling Nimbleness'],
 
-    # Modifiers
-    strength_modifier=0,
-    dexterity_modifier=2,
-    constitution_modifier=0,
-    wisdom_modifier=0,
-    intelligence_modifier=0,
-    charisma_modifier=0
+    # bonus
+    strength_bonus=0,
+    dexterity_bonus=2,
+    constitution_bonus=0,
+    wisdom_bonus=0,
+    intelligence_bonus=0,
+    charisma_bonus=0
 
 )
 
@@ -138,11 +147,11 @@ human = Race(
     description='',
     racial_abilities=[],
 
-    # Modifiers
-    strength_modifier=1,
-    dexterity_modifier=1,
-    constitution_modifier=1,
-    wisdom_modifier=1,
-    intelligence_modifier=1,
-    charisma_modifier=1
+    # bonus
+    strength_bonus=1,
+    dexterity_bonus=1,
+    constitution_bonus=1,
+    wisdom_bonus=1,
+    intelligence_bonus=1,
+    charisma_bonus=1
 )

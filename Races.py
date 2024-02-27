@@ -98,7 +98,7 @@ dwarf = Race(
 )
 
 elf = Race(
-    race_name='elf',
+    race_name='Elf',
     adult_age=100,
     lifespan=750,
     size='Medium',
@@ -154,4 +154,101 @@ human = Race(
     wisdom_bonus=1,
     intelligence_bonus=1,
     charisma_bonus=1
+)
+
+dragonborn = Race(
+    race_name='Dragonborn',
+    adult_age=15,
+    lifespan=80,
+    size='Medium',
+    speed=30,
+    language=['Common','Draconic'],
+    description='',
+    racial_abilities=['Draconic Ancestry','Breath Weapon','Damage Resistance',],
+
+    # bonus
+    strength_bonus=2,
+    dexterity_bonus=0,
+    constitution_bonus=0,
+    wisdom_bonus=0,
+    intelligence_bonus=0,
+    charisma_bonus=1
+)
+
+gnome = Race(
+    race_name='Gnome',
+    adult_age=40,
+    lifespan=450,
+    size='Small',
+    speed=25,
+    language=['Common','Gnomish'],
+    description='',
+    racial_abilities=['Darkvision','Gnome Cunning'],
+
+    # bonus
+    strength_bonus=0,
+    dexterity_bonus=0,
+    constitution_bonus=0,
+    wisdom_bonus=0,
+    intelligence_bonus=2,
+    charisma_bonus=0
+)
+
+halfelf = Race(
+    race_name='Half Elf',
+    adult_age=20,
+    lifespan=180,
+    size='Medium',
+    speed=30,
+    language=['Common','Elvish','Extra Language'],
+    description='',
+    racial_abilities=['Darkvision','Fey Ancestry','Skill Versatility'],
+
+    # bonus
+    # ================ For a Half Elf they are allowed to select 2 +1 ability bonuses =====================
+    # Default set to +1 Int and +1 Dex
+    strength_bonus=0,
+    dexterity_bonus=1,
+    constitution_bonus=0,
+    wisdom_bonus=0,
+    intelligence_bonus=1,
+    charisma_bonus=2
+)
+
+halforc = Race(
+    race_name='Half-Orc',
+    adult_age=14,
+    lifespan=75,
+    size='Medium',
+    speed=30,
+    language=['Common','Orc'],
+    description='',
+    racial_abilities=['Darkvision','Menacing','Relentless Endurance','Savage Attacks'],
+
+    # bonus
+    strength_bonus=2,
+    dexterity_bonus=0,
+    constitution_bonus=1,
+    wisdom_bonus=0,
+    intelligence_bonus=0,
+    charisma_bonus=0
+)
+
+tiefling = Race(
+    race_name='Tiefling',
+    adult_age=18,
+    lifespan=100,
+    size='Medium',
+    speed=30,
+    language=['Common','Infernal'],
+    description='',
+    racial_abilities=['Darkvision','Hellish Resistance','Infernal Legacy'],
+
+    # bonus
+    strength_bonus=0,
+    dexterity_bonus=0,
+    constitution_bonus=0,
+    wisdom_bonus=0,
+    intelligence_bonus=1,
+    charisma_bonus=2
 )

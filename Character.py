@@ -11,12 +11,9 @@ def Roll(sides):
 
 
 
-
-
-
 class Character:
-    
-    # attributeModifier = racialBonus + ?
+
+# Attribute modifiers may have to be written in the main app file.
     
     # Creates a character to be used by a player, or used as a non player character.
     def __init__(self,
@@ -33,7 +30,8 @@ class Character:
         self.characterClass = characterClass
 
         # Sets the Starting HP values for the characters based on class, race, and rolls
-        self.maxHP = self.characterClass.base_hp
+        self.gainedhp = 0
+        self.maxHP = self.characterClass.hit_die
         self.currentHP = self.maxHP
         self.tempHP = 0
 
@@ -138,7 +136,7 @@ class Character:
 
 # Get quick information about a character
 def statBlock(target):
-    os.system('cls')
+    os.system('clear')
     print(f"""Character Name: {target.name}
 Character Race: {target.race.name}
 Character Class: {target.characterClass.name}
@@ -169,13 +167,6 @@ Cha: {target.baseStats['Charisma']}
 
 
 
-os.system('cls')
-person = Character('Michael',Races.dwarf,character_Classes.barbarian)
-# statBlock(person)
-
-print(person.baseStats['Strength'])
-print(person.strengthModifier)
-
-
-
-
+# os.system('clear')
+# dwarf = Character('Gallywix',Races.gnome,character_Classes.wizard)
+# statBlock(dwarf)

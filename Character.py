@@ -1,6 +1,7 @@
 # Revision of Character.py
 # Testing out different data management tools i.e. nested dictionaries and lists.
 
+import Armory
 import Races
 import character_Classes
 import os
@@ -9,12 +10,20 @@ def Roll(sides):
     result = random.randint(1,sides)
     return result
 
+def Roll20():
+    result = random.randint(1,20)
+    return result
 
-
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Character:
 
 # Attribute modifiers may have to be written in the main app file.
+    # could possibly have to hard code it into certain action instead or possibly into the Roll Function
     
+    
+
+
+
     # Creates a character to be used by a player, or used as a non player character.
     def __init__(self,
                  name,
@@ -41,14 +50,14 @@ class Character:
         # self.size
         # self.height
         # self.weight
-
+        
 
 
         # ============= Additional Character Information ===============================================================
         self.armor_class = 10 # + (armorValue)
         # self.initiative
         # self.speed
-        # self.inventory = []
+        self.inventory = []
         # self.skills = []
         # self.spells = []
         
@@ -78,21 +87,7 @@ class Character:
             'Charisma':(Roll(6)*3)+charismaBonus
         }
 
-        # ============ Ability Modifiers ========================================================================
-        # self.strengthModifier = 0
-        def Strength_Modifier():
-            if self.baseStats['Strength'] <= 10 or self.baseStats['Strength'] >=11:
-                self.strengthModifier = 0
-            elif self.baseStats['Strength'] <= 12 or self.baseStats['Strength'] >=13:
-                self.strengthModifier = 1
-            elif self.baseStats['Strength'] <= 14 or self.baseStats['Strength'] >=15:
-                self.strengthModifier = 2
-            elif self.baseStats['Strength'] <= 16 or self.baseStats['Strength'] >=17:
-                self.strengthModifier = 3
-            elif self.baseStats['Strength'] <= 18 or self.baseStats['Strength'] >=19:
-                self.strengthModifier = 4
-            elif self.baseStats['Strength'] <= 20 or self.baseStats['Strength'] >=21:
-                self.strengthModifier = 5
+       
 
 
 
@@ -103,33 +98,36 @@ class Character:
 
         # ========== Define Character Actions ==================================================================================
         # Stows item in inventory.
-        def Stow():
-            pass
-        # Equips an item located in the inventory.
-        def Equip():
-            pass
-
-        # Removes equipped item and places in inventory.
-        def Remove():
-            pass
-
-        # Drops the item from inventory.
-        def Drop():
-            pass
+    def Stow(self,item):
+        self.inventory.append(item)
+        print(f'You have put {item.name} into your bag.')
         
 
-        # ========== Saving/Loading Data ==================================================================================
-        def Save_Character():
-            pass
+    # # Equips an item located in the inventory.
+    # def Equip():
+    #     pass
 
-        def Load_Character():
-            pass
+    # # Removes equipped item and places in inventory.
+    # def Remove():
+    #     pass
 
-        def Delete_Character():
-            pass
+    # # Drops the item from inventory.
+    # def Drop():
+    #     pass
+    
+
+    # # ========== Saving/Loading Data ==================================================================================
+    # def Save_Character():
+    #     pass
+
+    # def Load_Character():
+    #     pass
+
+    # def Delete_Character():
+    #     pass
 
 
-
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
@@ -168,5 +166,3 @@ Cha: {target.baseStats['Charisma']}
 
 
 # os.system('clear')
-# dwarf = Character('Gallywix',Races.gnome,character_Classes.wizard)
-# statBlock(dwarf)

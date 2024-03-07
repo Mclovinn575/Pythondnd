@@ -131,6 +131,14 @@ class Character:
     # def Delete_Character():
     #     pass
         
+
+
+
+
+
+
+
+    # # ========== Establishing Attribute Modifiers ==================================================================================
     @property
     def strength_modifier(self):
         return ((self.baseStats['Strength'] - 10) //2)
@@ -152,11 +160,6 @@ class Character:
 
 
 
-# Caclulating ability Modifiers
-    # def calculate_modifier(self, attribute_score):
-    #     modifier = (attribute_score - 10) // 2
-    #     return modifier
-    
     
     
     

@@ -89,7 +89,12 @@ class Character:
 
        
 
+        
 
+
+       
+
+        
 
 
 
@@ -125,6 +130,37 @@ class Character:
 
     # def Delete_Character():
     #     pass
+        
+    @property
+    def strength_modifier(self):
+        return ((self.baseStats['Strength'] - 10) //2)
+    @property
+    def dexterity_modifier(self):
+        return ((self.baseStats['Dexterity'] - 10) //2)
+    @property
+    def constitution_modifier(self):
+        return ((self.baseStats['Constitution'] - 10) //2)
+    @property
+    def wisdom_modifier(self):
+        return ((self.baseStats['Wisdom'] - 10) //2)
+    @property
+    def intelligence_modifier(self):
+        return ((self.baseStats['Intelligence'] - 10) //2)
+    @property
+    def charisma_modifier(self):
+        return ((self.baseStats['Charisma'] - 10) //2)
+
+
+
+# Caclulating ability Modifiers
+    # def calculate_modifier(self, attribute_score):
+    #     modifier = (attribute_score - 10) // 2
+    #     return modifier
+    
+    
+    
+    
+
 
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -134,7 +170,7 @@ class Character:
 
 # Get quick information about a character
 def statBlock(target):
-    os.system('clear')
+    os.system('cls')
     print(f"""Character Name: {target.name}
 Character Race: {target.race.name}
 Character Class: {target.characterClass.name}
@@ -151,6 +187,17 @@ Con: {target.baseStats['Constitution']}
 Wis: {target.baseStats['Wisdom']}
 Int: {target.baseStats['Intelligence']}
 Cha: {target.baseStats['Charisma']}
+
+
+Attribute Modifiers:
+
+Str: {target.strength_modifier}
+Dex: {target.dexterity_modifier}
+Con: {target.constitution_modifier}
+Wis: {target.wisdom_modifier}
+Int: {target.intelligence_modifier}
+Cha: {target.charisma_modifier}
+
           """)
 
 
@@ -165,4 +212,3 @@ Cha: {target.baseStats['Charisma']}
 
 
 
-# os.system('clear')

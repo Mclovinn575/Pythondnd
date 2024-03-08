@@ -1,6 +1,7 @@
 import GameMenu
 import Character
 import Races
+import Armory
 import character_Classes
 
 
@@ -14,4 +15,11 @@ hero = Character.Character(
     characterClass=character_Classes.fighter
 )
 
+hero.Stow(Armory.club)
+hero.Stow(Armory.dagger)
+hero.Stow(Armory.flail)
 Character.statBlock(hero)
+
+
+
+

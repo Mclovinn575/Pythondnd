@@ -58,6 +58,7 @@ class Character:
         # self.initiative
         # self.speed
         self.inventory = []
+        
         # self.skills = []
         # self.spells = []
         
@@ -105,8 +106,7 @@ class Character:
         # Stows item in inventory.
     def Stow(self,item):
         self.inventory.append(item)
-        print(f'You have put {item.name} into your bag.')
-        
+    
 
     # # Equips an item located in the inventory.
     # def Equip():
@@ -179,6 +179,8 @@ Character Race: {target.race.name}
 Character Class: {target.characterClass.name}
 
 HP: {target.currentHP}/{target.maxHP}
+
+Inventory: {', '.join(item.name for item in target.inventory)}
 
 ============================================================================
 

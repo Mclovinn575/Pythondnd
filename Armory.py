@@ -15,6 +15,11 @@ class Weapon:
             self.maxDmg = maxDmg
             self.category = category
             self.is_ranged = is_ranged
+    
+    def __str__(self) -> str:
+          return self.name
+
+
 
 # Simple Melee Weapons
 

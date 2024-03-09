@@ -1,6 +1,21 @@
 # Revision of Character.py
 # Testing out different data management tools i.e. nested dictionaries and lists.
 
+
+# ++++++++++ TO DO ++++++++++++++ 
+'''
+- Need to flesh out backgrounds and alignments
+    - Will probably end up creating a new file to hold the descriptions and effects for each since there are numerous choices.
+-Getting started on a type of inventory system. Need to brush up on how equipment is worn via the handbook.
+    - Head/Body/Arms/Legs?
+    - Armor = Full Suit?
+        - If so, does equipping certain magical items decrease the armor value of the outfit?
+    
+'''
+
+
+
+
 import Armory
 import Races
 import character_Classes
@@ -16,19 +31,13 @@ def Roll20():
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Character:
 
-# Attribute modifiers may have to be written in the main app file.
-    # could possibly have to hard code it into certain action instead or possibly into the Roll Function
-    
-    
-
-
-
     # Creates a character to be used by a player, or used as a non player character.
     def __init__(self,
                  name,
                  race,
                  characterClass) -> None:
 
+        
         # ============= Provide basic character information ===========================================================
         # Create a name for this Character
         self.name = name
@@ -36,31 +45,6 @@ class Character:
         self.race = race
         # Define Character Class
         self.characterClass = characterClass
-
-        # Sets the Starting HP values for the characters based on class, race, and rolls
-        self.gainedhp = 0
-        self.maxHP = self.characterClass.hit_die
-        self.currentHP = self.maxHP
-        self.tempHP = 0
-
-        # self.alignment
-        # self.background
-
-        # self.size
-        # self.height
-        # self.weight
-        
-
-
-        # ============= Additional Character Information ===============================================================
-        self.armor_class = 10 # + (armorValue)
-        # self.initiative
-        # self.speed
-        self.inventory = []
-        
-        # self.skills = []
-        # self.spells = []
-        
 
 
 
@@ -72,12 +56,8 @@ class Character:
         wisdomBonus = race.wisdom_bonus
         intelligenceBonus = race.intelligence_bonus
         charismaBonus = race.charisma_bonus
-    
 
-
-
-
-        # When creating a character, create a random base stat block first. May have to move stats around in character creation order to ensure that modifiers get applied correctly
+            # When creating a character, create a random base stat block first. May have to move stats around in character creation order to ensure that modifiers get applied correctly
         self.baseStats = {
             'Strength':(Roll(6)*3)+strengthBonus,
             'Dexterity':(Roll(6)*3)+dexterityBonus,
@@ -87,20 +67,33 @@ class Character:
             'Charisma':(Roll(6)*3)+charismaBonus
         }
 
+
+
+        # Sets the Starting HP values for the characters based on class, race, and rolls
+        self.gainedhp = 0
+        self.maxHP = self.characterClass.hit_die + self.constitution_modifier
+        self.currentHP = self.maxHP
+        self.tempHP = 0
+
+        # self.alignment
+        # self.background
+
+        self.size = self.race.size
+        # self.height
+        # self.weight
+
+        # ============= Additional Character Information ===============================================================
+        self.armor_class = 10 + self.dexterity_modifier
+        # self.initiative
+        self.speed = self.race.speed
+        self.inventory = []
+        
+        self.skills = []
+        self.spells = []
+
        
 
         
-
-
-       
-
-        
-
-
-
-
-
-
         # ========== Define Character Actions ==================================================================================
         # Stows item in inventory.
     def Stow(self,item):
@@ -115,9 +108,9 @@ class Character:
     # def Remove():
     #     pass
 
-    # # Drops the item from inventory.
-    # def Drop():
-    #     pass
+    # Drops the item from inventory.
+    def Drop(self,item):
+        self.inventory.remove(item)
     
 
     # # ========== Saving/Loading Data ==================================================================================
@@ -172,12 +165,14 @@ class Character:
 
 # Get quick information about a character
 def statBlock(target):
-    os.system('cls')
+    # os.system('cls')
+    os.system('clear')
     print(f"""Character Name: {target.name}
 Character Race: {target.race.name}
 Character Class: {target.characterClass.name}
 
 HP: {target.currentHP}/{target.maxHP}
+Armor Class: {target.armor_class}
 
 Inventory: {', '.join(item.name for item in target.inventory)}
 

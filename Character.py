@@ -31,6 +31,36 @@ def Roll20():
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class Character:
 
+
+
+
+
+    # # ========== Establishing Attribute Modifiers ==================================================================================
+    @property
+    def strength_modifier(self):
+        return ((self.baseStats['Strength'] - 10) //2)
+    @property
+    def dexterity_modifier(self):
+        return ((self.baseStats['Dexterity'] - 10) //2)
+    @property
+    def constitution_modifier(self):
+        return ((self.baseStats['Constitution'] - 10) //2)
+    @property
+    def wisdom_modifier(self):
+        return ((self.baseStats['Wisdom'] - 10) //2)
+    @property
+    def intelligence_modifier(self):
+        return ((self.baseStats['Intelligence'] - 10) //2)
+    @property
+    def charisma_modifier(self):
+        return ((self.baseStats['Charisma'] - 10) //2)
+
+
+
+
+
+
+
     # Creates a character to be used by a player, or used as a non player character.
     def __init__(self,
                  name,
@@ -94,8 +124,8 @@ class Character:
        
 
         
-        # ========== Define Character Actions ==================================================================================
-        # Stows item in inventory.
+    # ========== Define Character Actions ==================================================================================
+    # Stows item in inventory.
     def Stow(self,item):
         self.inventory.append(item)
     
@@ -130,25 +160,6 @@ class Character:
 
 
 
-    # # ========== Establishing Attribute Modifiers ==================================================================================
-    @property
-    def strength_modifier(self):
-        return ((self.baseStats['Strength'] - 10) //2)
-    @property
-    def dexterity_modifier(self):
-        return ((self.baseStats['Dexterity'] - 10) //2)
-    @property
-    def constitution_modifier(self):
-        return ((self.baseStats['Constitution'] - 10) //2)
-    @property
-    def wisdom_modifier(self):
-        return ((self.baseStats['Wisdom'] - 10) //2)
-    @property
-    def intelligence_modifier(self):
-        return ((self.baseStats['Intelligence'] - 10) //2)
-    @property
-    def charisma_modifier(self):
-        return ((self.baseStats['Charisma'] - 10) //2)
 
 
 

@@ -117,7 +117,6 @@ class Character:
         # self.initiative
         self.speed = self.race.speed
         self.inventory = []
-        
         self.skills = []
         self.spells = []
 

@@ -176,8 +176,8 @@ class Character:
 
 # Get quick information about a character
 def statBlock(target):
-    # os.system('cls')
-    os.system('clear')
+    os.system('cls')
+    # os.system('clear')
     print(f"""Character Name: {target.name}
 Character Race: {target.race.name}
 Character Class: {target.characterClass.name}
